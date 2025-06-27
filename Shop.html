@@ -1,0 +1,359 @@
+<html dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaTech</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: 'Vazirmatn', sans-serif;
+      }
+      /* Optional: Add some hover effect for product cards */
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      }
+      .product-card {
+        transition: all 0.2s ease-in-out;
+      }
+      /* Style for confirmation message */
+      .add-to-cart-confirmation {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #2d372a;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        display: none; /* Initially hidden */
+      }
+      .add-to-cart-confirmation.show {
+        opacity: 1;
+        display: block;
+      }
+
+      /* Style for cart item count badge */
+      .cart-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: #ef4444; /* Red color */
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        min-width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#131712] min-h-screen flex flex-col overflow-x-hidden">
+    <div class="layout-container flex flex-col flex-grow h-full">
+      <header class="flex items-center justify-between border-b border-b-[#2d372a] px-6 sm:px-10 py-4" dir="ltr">
+        <div class="flex items-center gap-4 text-white">
+          <div class="size-4"></div>
+          <a class="text-white text-lg font-bold tracking-[-0.015em]" href="Home.html">NovaTech</a>
+        </div>
+
+        <div class="flex flex-1 justify-end items-center gap-4 sm:gap-8 flex-wrap">
+          <div class="flex items-center gap-4 sm:gap-9">
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Contactus.html">تماس با ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Address.html">آدرس ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="alireza/index.html">وبلاگ من</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Nazar.html">درباره ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Shop.html">فروشگاه</a>
+          </div>
+
+          <div class="flex items-center gap-2 mt-2 sm:mt-0">
+            <a href="sing.html" class="flex items-center justify-center rounded-full bg-[#2d372a] text-white text-sm font-bold h-10 px-4 transition duration-200 hover:text-white/80">
+              <span class="truncate">ثبت نام</span>
+            </a>
+
+            <button class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z" />
+              </svg>
+            </button>
+
+            <a href="sabad.html" class="relative">
+              <button class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z" />
+                </svg>
+              </button>
+              <span id="cart-item-count" class="cart-badge">0</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="px-6 sm:px-10 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <div class="flex flex-wrap justify-between gap-3 p-4">
+            <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">
+              فروشگاه
+            </p>
+          </div>
+          <div
+            id="products-grid"
+            class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4"
+          >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="add-to-cart-confirmation" class="add-to-cart-confirmation">
+      محصول به سبد خرید اضافه شد!
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cartItemCountSpan = document.getElementById('cart-item-count');
+        const productsGrid = document.getElementById('products-grid');
+        const confirmationMessage = document.getElementById('add-to-cart-confirmation');
+
+        // Define your products data here
+        const products = [
+          {
+            id: '1',
+            name: 'هدفون کوانتوم ایکس',
+            tagline: 'تجربه صوتی عالی',
+            price: 5000000,
+            image: 'img/Copilot_20250624_120635.png',
+            description: 'هدفون کوانتوم ایکس با درایورهای صوتی پیشرفته، تجربه‌ای بی‌نظیر از شنیدن موسیقی را فراهم می‌کند. دارای نویز کنسلینگ فعال و طراحی ارگونومیک برای راحتی بیشتر.'
+          },
+          {
+            id: '2',
+            name: 'ساعت هوشمند',
+            tagline: 'تکنولوژی خم‌کنندگی',
+            price: 8500000,
+            image: 'img/unnamed.png', // Corrected example image path
+            description: 'ساعت هوشمند با صفحه نمایش انعطاف‌پذیر و قابلیت‌های ردیابی سلامتی جامع. طراحی مدرن و باتری با دوام بالا.'
+          },
+          {
+            id: '3',
+            name: 'پروژکتور نبولا',
+            tagline: 'تصاویر کیهانی در خانه',
+            price: 7500000,
+            image: 'img/Copilot_20250624_120151.png',
+            description: 'پروژکتور نبولا تجربه‌ای بی‌نظیر از سینمای خانگی را برای شما به ارمغان می‌آورد. با قابلیت نمایش تصاویر با کیفیت بالا و روشن، شما را در دنیایی از رنگ‌ها و جزئیات غرق می‌کند. مناسب برای شب‌های فیلم، بازی یا حتی ایجاد فضای آرامش‌بخش با نمایش کهکشان‌ها. دارای اتصالات متنوع و رابط کاربری آسان.'
+          },
+          {
+            id: '4',
+            name: 'هدفون‌های اکوپالس',
+            tagline: 'صدای شفاف و کریستالی',
+            price: 3200000,
+            image: 'img/unnamed (1).png', // Corrected example image path
+            description: 'هدفون‌های اکوپالس با کیفیت صدای شفاف و کریستالی، ایده‌آل برای دوست‌داران موسیقی. سبک و راحت برای استفاده طولانی مدت.'
+          },
+          {
+            id: '5',
+            name: 'پهپاد سولاریس',
+            tagline: 'عکاسی هوایی خودران',
+            price: 2200000,
+            image: 'img/unnamed (2).png', // Corrected example image path
+            description: 'پهپاد سولاریس با قابلیت پرواز خودران و دوربین با کیفیت 4K برای عکاسی و فیلم‌برداری هوایی حرفه‌ای. مجهز به سنسورهای جلوگیری از برخورد.'
+          },
+          {
+            id: '6',
+            name: 'کیبورد لومینا',
+            tagline: 'بازخورد لمسی نورانی یکی از بهترین مدل های بازار',
+            price: 4500000,
+            image: 'img/unnamed (3).png', // Corrected example image path
+            description: 'کیبورد لومینا با نورپردازی RGB قابل تنظیم و کلیدهای مکانیکی با بازخورد لمسی عالی برای تجربه‌ی تایپ و بازی بی‌نظیر.'
+          },
+          {
+            id: '7',
+            name: 'دوربین امنیتی هوشمند',
+            tagline: 'نظارت ۲۴ ساعته با کیفیت بالا',
+            price: 3800000,
+            image: 'img/images (1).jfif',
+            description: 'دوربین امنیتی هوشمند با قابلیت تشخیص حرکت، دید در شب و اتصال به اپلیکیشن موبایل برای نظارت مداوم بر منزل یا محل کار شما.'
+          },
+          {
+            id: '8',
+            name: 'شارژر بی‌سیم سریع',
+            tagline: 'شارژ سریع و ایمن برای دستگاه‌ها',
+            price: 1200000,
+            image: 'img/Copilot_20250624_121003.png',
+            description: 'شارژر بی‌سیم سریع با تکنولوژی پیشرفته، دستگاه‌های شما را با حداکثر سرعت و ایمنی شارژ می‌کند. طراحی زیبا و جمع‌وجور.'
+          },
+          {
+            id: '9',
+            name: 'مچ‌بند هوشمند سلامت',
+            tagline: 'ردیابی ضربان قلب و فعالیت بدنی',
+            price: 2500000,
+            image: 'img/280x280.jpg',
+            description: 'مچ‌بند هوشمند سلامت با قابلیت ردیابی دقیق ضربان قلب، کالری سوزانده شده و الگوهای خواب. همراهی ایده‌آل برای زندگی سالم‌تر.'
+          },
+          {
+            id: '10',
+            name: 'کیف لپ‌تاپ ضدآب',
+            tagline: 'محافظت کامل و طراحی مدرن',
+            price: 900000,
+            image: 'img/photo_2021-07-26_01-49-25.jpg',
+            description: 'کیف لپ‌تاپ ضدآب با طراحی شیک و مدرن، محافظت کاملی از لپ‌تاپ و لوازم جانبی شما در برابر آب و ضربه ارائه می‌دهد.'
+          },
+          {
+            id: '11',
+            name: 'هدفون بی‌سیم ورزشی',
+            tagline: 'مقاوم در برابر تعریق و کیفیت بالا',
+            price: 2800000,
+            image: 'img/Untitled-12-4.png',
+            description: 'هدفون بی‌سیم ورزشی با طراحی ارگونومیک و مقاومت در برابر آب و تعریق، بهترین همراه شما برای تمرینات ورزشی و فعالیت‌های روزمره.'
+          },
+          {
+            id: '12',
+            name: 'پایه نگهدارنده موبایل',
+            tagline: 'قابل تنظیم و مناسب برای میز کار',
+            price: 350000,
+            image: 'img/images.jfif',
+            description: 'پایه نگهدارنده موبایل با قابلیت تنظیم زاویه و ارتفاع، ایده‌آل برای مشاهده ویدئو، تماس تصویری و استفاده راحت از موبایل روی میز.'
+          },
+          {
+            id: '13',
+            name: 'موس گیمینگ',
+            tagline: 'یکی از بهترین کارهای ما در این سایت',
+            price: 1800000,
+            image: 'img/images (2).jfif',
+            description: 'موس گیمینگ حرفه‌ای با سنسور دقیق، کلیدهای قابل برنامه‌ریزی و نورپردازی جذاب برای تجربه‌ی گیمینگ فوق‌العاده.'
+          },
+          {
+            id: '14',
+            name: 'هارد یک ترا',
+            tagline: 'هارد اکسترنال یکی از خفن ترین کارهای بازار',
+            price: 4000000,
+            image: 'img/images (3).jfif',
+            description: 'هارد اکسترنال ۱ ترابایتی با سرعت انتقال داده بالا و بدنه مقاوم، فضای کافی برای ذخیره تمام اطلاعات شما را فراهم می‌کند.'
+          },
+          {
+            id: '15',
+            name: 'فلش 16 گیگ',
+            tagline: 'یک فلش ساده و کم حجم برای کارهای سبک',
+            price: 200000,
+            image: 'img/فلش-مموری-سن-دیسک-ظرفیت-16-گیگابایت-مدل-ultra-flair.jpg',
+            description: 'فلش مموری ۱۶ گیگابایتی، ایده‌آل برای انتقال سریع و امن فایل‌های کوچک و متوسط. طراحی کم‌حجم و مقاوم.'
+          }
+        ];
+
+        // Function to format numbers as Iranian Toman (with commas)
+        function formatToman(amount) {
+          return new Intl.NumberFormat('fa-IR').format(amount);
+        }
+
+        // Initialize cart from Local Storage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to update the cart item count in the header
+        function updateCartCount() {
+          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+          cartItemCountSpan.textContent = totalItems;
+          if (totalItems > 0) {
+            cartItemCountSpan.style.display = 'flex'; // Show count if items exist
+          } else {
+            cartItemCountSpan.style.display = 'none'; // Hide count if no items
+          }
+        }
+
+        // Function to add a product to the cart
+        function addProductToCart(product) {
+          const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+          if (existingProductIndex > -1) {
+            // Product already in cart, increment quantity
+            cart[existingProductIndex].quantity += 1;
+          } else {
+            // Add new product to cart
+            cart.push({ ...product, quantity: 1 });
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          updateCartCount();
+          showConfirmationMessage();
+        }
+
+        // Function to show confirmation message
+        let confirmationTimeout;
+        function showConfirmationMessage() {
+          confirmationMessage.classList.add('show');
+          clearTimeout(confirmationTimeout); // Clear any existing timeout
+          confirmationTimeout = setTimeout(() => {
+            confirmationMessage.classList.remove('show');
+          }, 2000); // Hide after 2 seconds
+        }
+
+        // Function to render products dynamically
+        function renderProducts() {
+          productsGrid.innerHTML = ''; // Clear existing products
+          products.forEach(product => {
+            const productCard = `
+              <div class="product-card block rounded-xl overflow-hidden bg-[#1d231e]">
+                <div class="flex flex-col gap-3 pb-3">
+                  <a href="product-detail.html?id=${product.id}">
+                    <div
+                      class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                      style='background-image: url("${product.image}");'
+                    ></div>
+                  </a>
+                  <div class="p-3">
+                    <a href="product-detail.html?id=${product.id}">
+                      <p class="text-white text-base font-medium leading-normal">${product.name}</p>
+                      <p class="text-[#a5b6a0] text-sm font-normal leading-normal">${product.tagline}</p>
+                    </a>
+                    <p class="text-white text-md font-semibold mt-2">قیمت: ${formatToman(product.price)} تومان</p>
+                    <button
+                      class="add-to-cart-btn mt-4 w-full bg-[#3c4a38] text-white py-2 rounded-md text-sm font-semibold hover:bg-[#4a5a45] transition duration-200"
+                      data-id="${product.id}"
+                      data-name="${product.name}"
+                      data-price="${product.price}"
+                      data-image="${product.image}"
+                    >
+                      افزودن به سبد خرید
+                    </button>
+                  </div>
+                </div>
+              </div>
+            `;
+            productsGrid.insertAdjacentHTML('beforeend', productCard);
+          });
+
+          // Add event listeners to the new "Add to Cart" buttons
+          document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+              event.preventDefault(); // Prevent default if button was a link
+              const product = {
+                id: button.dataset.id,
+                name: button.dataset.name,
+                price: parseInt(button.dataset.price),
+                image: button.dataset.image
+              };
+              addProductToCart(product);
+            });
+          });
+        }
+
+        // Initial render of products
+        renderProducts();
+
+        // Initial update of cart count when the page loads
+        updateCartCount();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,345 @@
+<html dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaTech</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: 'Vazirmatn', sans-serif;
+      }
+      /* Hide arrows for number input */
+      input[type="number"]::-webkit-outer-spin-button,
+      input[type="number"]::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+      input[type="number"] {
+          -moz-appearance: textfield; /* Firefox */
+      }
+      /* Style for the confirmation message */
+      .payment-confirmation {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #4CAF50; /* Green background */
+        color: white;
+        padding: 20px 40px;
+        border-radius: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        z-index: 1000; /* Ensure it's on top of everything */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: none; /* Hidden by default */
+      }
+
+      .payment-confirmation.show {
+          opacity: 1;
+          transition: opacity 0.3s ease-in-out;
+      }
+      .payment-confirmation.hide {
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#131712] min-h-screen flex flex-col overflow-x-hidden">
+    <div class="layout-container flex flex-col flex-grow h-full">
+      <header class="flex items-center justify-between border-b border-b-[#2d372a] px-6 sm:px-10 py-4" dir="ltr">
+        <div class="flex items-center gap-4 text-white">
+          <div class="size-4"></div>
+          <a class="text-white text-lg font-bold tracking-[-0.015em]" href="Home.html">NovaTech</a>
+        </div>
+
+        <div class="flex flex-1 justify-end items-center gap-4 sm:gap-8 flex-wrap">
+          <div class="flex items-center gap-4 sm:gap-9">
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Contactus.html">تماس با ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Address.html">آدرس ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="alireza/index.html">وبلاگ من</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Nazar.html">درباره ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Shop.html">فروشگاه</a>
+
+          </div>
+
+          <div class="flex items-center gap-2 mt-2 sm:mt-0">
+            <a href="sing.html" class="flex items-center justify-center rounded-full bg-[#2d372a] text-white text-sm font-bold h-10 px-4 transition duration-200 hover:text-white/80">
+              <span class="truncate">ثبت نام</span>
+            </a>
+
+            <button class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z" />
+              </svg>
+            </button>
+
+            <a href="sabad.html">
+              <button class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z" />
+                </svg>
+              </button>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="px-40 flex flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <div class="flex flex-wrap justify-between gap-3 p-4">
+            <p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">سبد خرید</p>
+          </div>
+          
+          <div id="cart-items-container">
+            <p id="no-items-message" class="text-[#a5b6a0] text-center py-10" style="display: none;">سبد خرید شما خالی است.</p>
+          </div>
+
+          <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">صورت حساب</h3>
+          <div class="p-4">
+            <div class="flex justify-between gap-x-6 py-2">
+              <p class="text-[#a5b6a0] text-sm font-normal leading-normal">قیمت کالا ها</p>
+              <p class="text-white text-sm font-normal leading-normal text-right" id="subtotal">0 تومان</p>
+            </div>
+            <div class="flex justify-between gap-x-6 py-2">
+              <p class="text-[#a5b6a0] text-sm font-normal leading-normal">تخفیف شما</p>
+              <p class="text-white text-sm font-normal leading-normal text-right" id="discount-percentage">0%</p>
+            </div>
+            <div class="flex justify-between gap-x-6 py-2">
+              <p class="text-[#a5b6a0] text-sm font-normal leading-normal">سود شما</p>
+              <p class="text-white text-sm font-normal leading-normal text-right" id="your-profit-amount">0 تومان</p>
+            </div>
+            <div class="flex justify-between gap-x-6 py-2">
+              <p class="text-[#a5b6a0] text-sm font-normal leading-normal">قیمت کل</p>
+              <p class="text-white text-sm font-normal leading-normal text-right" id="total-price">0 تومان</p>
+            </div>
+          </div>
+          <div class="flex px-4 py-3 justify-end">
+            <button
+              id="checkout-button"
+              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-5 bg-[#53d22c] text-[#131712] text-base font-bold leading-normal tracking-[0.015em]"
+            >
+              <span class="truncate">پرداخت</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="payment-confirmation-message" class="payment-confirmation">
+      پرداخت با موفقیت انجام شد!
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cartItemsContainer = document.getElementById('cart-items-container');
+        const subtotalElement = document.getElementById('subtotal');
+        const discountPercentageElement = document.getElementById('discount-percentage'); 
+        const yourProfitAmountElement = document.getElementById('your-profit-amount');   
+        const totalPriceElement = document.getElementById('total-price');
+        const checkoutButton = document.getElementById('checkout-button');
+        const paymentConfirmationMessage = document.getElementById('payment-confirmation-message');
+        const noItemsMessage = document.getElementById('no-items-message');
+
+        const MAX_ITEMS_FOR_DISCOUNT = 8;
+        const DISCOUNT_PER_PAIR_PERCENTAGE = 10; // 10%
+
+        // Function to format numbers as Iranian Toman (with commas)
+        function formatToman(amount) {
+          return new Intl.NumberFormat('fa-IR').format(amount) + ' تومان';
+        }
+
+        // Function to save cart to Local Storage
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCartItems(); // Re-render items after saving
+            updateCartSummary(); // Update summary as well
+        }
+
+        // Function to load cart from Local Storage
+        function loadCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        // Function to render (display) cart items in the HTML
+        function renderCartItems() {
+            const cart = loadCart();
+            cartItemsContainer.innerHTML = ''; // Clear existing items
+
+            if (cart.length === 0) {
+                noItemsMessage.style.display = 'block';
+                // Hide summary elements if cart is empty
+                subtotalElement.textContent = formatToman(0);
+                discountPercentageElement.textContent = `0%`;
+                yourProfitAmountElement.textContent = formatToman(0);
+                totalPriceElement.textContent = formatToman(0);
+                return; // Exit the function if cart is empty
+            } else {
+                noItemsMessage.style.display = 'none';
+            }
+
+            cart.forEach(item => {
+                const productItemDiv = document.createElement('div');
+                productItemDiv.className = 'flex items-center gap-4 bg-[#131712] px-4 min-h-[72px] py-2 justify-between product-item';
+                productItemDiv.dataset.productId = item.id;
+
+                productItemDiv.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-14"
+                            style='background-image: url("${item.image}");'
+                        ></div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-white text-base font-medium leading-normal line-clamp-1">${item.name}</p>
+                            <p class="text-[#a5b6a0] text-sm font-normal leading-normal line-clamp-2">${formatToman(item.price)}</p>
+                        </div>
+                    </div>
+                    <div class="shrink-0 flex items-center gap-4">
+                        <div class="flex items-center gap-2 text-white">
+                            <button class="text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#2d372a] cursor-pointer quantity-minus" data-product-id="${item.id}">-</button>
+                            <input
+                                class="text-base font-medium leading-normal w-12 p-0 text-center bg-transparent focus:outline-0 focus:ring-0 focus:border-none border-none [appearance:textfield] [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none product-quantity"
+                                type="number"
+                                value="${item.quantity}"
+                                min="0"
+                                data-product-id="${item.id}"
+                            />
+                            <button class="text-base font-medium leading-normal flex h-7 w-7 items-center justify-center rounded-full bg-[#2d372a] cursor-pointer quantity-plus" data-product-id="${item.id}">+</button>
+                        </div>
+                        <button class="text-red-500 hover:text-red-700 delete-item-btn" data-product-id="${item.id}">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                            <path d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96ZM200,80H56V208a16,16,0,0,0,16,16H184a16,16,0,0,0,16-16ZM88,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Z"></path>
+                          </svg>
+                        </button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(productItemDiv);
+            });
+
+            // Re-attach event listeners after rendering new elements
+            attachEventListenersToCartItems();
+        }
+
+        // Function to attach event listeners to dynamically created cart items
+        function attachEventListenersToCartItems() {
+            document.querySelectorAll('.quantity-minus').forEach(button => {
+                button.onclick = (e) => {
+                    const productId = e.target.dataset.productId;
+                    let cart = loadCart();
+                    const item = cart.find(i => i.id === productId);
+                    if (item && item.quantity > 1) {
+                        item.quantity -= 1;
+                        saveCart(cart);
+                    } else if (item && item.quantity === 1) {
+                        // If quantity becomes 1 and we click minus, remove item
+                        cart = cart.filter(i => i.id !== productId);
+                        saveCart(cart);
+                    }
+                };
+            });
+
+            document.querySelectorAll('.quantity-plus').forEach(button => {
+                button.onclick = (e) => {
+                    const productId = e.target.dataset.productId;
+                    let cart = loadCart();
+                    const item = cart.find(i => i.id === productId);
+                    if (item) {
+                        item.quantity += 1;
+                        saveCart(cart);
+                    }
+                };
+            });
+
+            document.querySelectorAll('.product-quantity').forEach(input => {
+                input.onchange = (e) => {
+                    const productId = e.target.dataset.productId;
+                    let newQuantity = parseInt(e.target.value);
+                    let cart = loadCart();
+                    const item = cart.find(i => i.id === productId);
+
+                    if (item) {
+                        if (isNaN(newQuantity) || newQuantity <= 0) {
+                            cart = cart.filter(i => i.id !== productId); // Remove if 0 or invalid
+                        } else {
+                            item.quantity = newQuantity;
+                        }
+                        saveCart(cart);
+                    }
+                };
+            });
+
+            document.querySelectorAll('.delete-item-btn').forEach(button => {
+                button.onclick = (e) => {
+                    // Use closest to ensure we get the button itself, not a child svg path
+                    const productId = e.target.closest('.delete-item-btn').dataset.productId;
+                    let cart = loadCart();
+                    cart = cart.filter(item => item.id !== productId);
+                    saveCart(cart);
+                };
+            });
+        }
+
+        // Function to calculate and update all prices in the summary
+        function updateCartSummary() {
+          const cart = loadCart();
+          let subtotal = 0;
+          let totalItems = 0; 
+          
+          cart.forEach(item => {
+            subtotal += item.price * item.quantity;
+            totalItems += item.quantity;
+          });
+
+          let discountAmount = 0;
+          let displayedDiscountPercentage = 0;
+
+          // Cap the totalItems to MAX_ITEMS_FOR_DISCOUNT for discount calculation
+          const effectiveTotalItems = Math.min(totalItems, MAX_ITEMS_FOR_DISCOUNT);
+          const numberOfPairs = Math.floor(effectiveTotalItems / 2);
+
+          if (numberOfPairs > 0) {
+              displayedDiscountPercentage = numberOfPairs * DISCOUNT_PER_PAIR_PERCENTAGE; 
+              discountAmount = subtotal * (displayedDiscountPercentage / 100);
+          }
+
+          const finalPrice = subtotal - discountAmount;
+
+          subtotalElement.textContent = formatToman(subtotal);
+          discountPercentageElement.textContent = `${displayedDiscountPercentage}%`; 
+          yourProfitAmountElement.textContent = formatToman(discountAmount); 
+          totalPriceElement.textContent = formatToman(finalPrice);
+        }
+
+        // Checkout button functionality
+        checkoutButton.addEventListener('click', () => {
+          // Show confirmation message
+          paymentConfirmationMessage.style.display = 'block';
+          paymentConfirmationMessage.classList.add('show'); 
+
+          // Hide message and redirect after 2 seconds
+          setTimeout(() => {
+            paymentConfirmationMessage.classList.add('hide'); 
+            paymentConfirmationMessage.classList.remove('show');
+
+            setTimeout(() => {
+                paymentConfirmationMessage.style.display = 'none'; 
+                localStorage.removeItem('cart'); // Clear cart after successful checkout
+                window.location.href = 'Home.html'; 
+            }, 300); 
+          }, 2000); 
+        });
+
+        // Initial render and calculation when the page loads
+        renderCartItems();
+        updateCartSummary();
+      });
+    </script>
+  </body>
+</html>

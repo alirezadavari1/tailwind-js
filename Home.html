@@ -1,0 +1,131 @@
+<html dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaTech</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: 'Vazirmatn', sans-serif;
+      }
+
+      /* Style for cart item count badge */
+      .cart-badge {
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        background-color: #ef4444; /* Red color */
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 0.75rem;
+        font-weight: bold;
+        display: none; /* Hidden by default */
+        align-items: center;
+        justify-content: center;
+        min-width: 20px;
+        height: 20px;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[#131712] min-h-screen flex flex-col overflow-x-hidden">
+    <div class="layout-container flex flex-col flex-grow h-full">
+      <header class="flex items-center justify-between border-b border-b-[#2d372a] px-6 sm:px-10 py-4" dir="ltr">
+        <div class="flex items-center gap-4 text-white">
+          <div class="size-4"></div>
+          <a class="text-white text-lg font-bold tracking-[-0.015em]" href="Home.html">NovaTech</a>
+        </div>
+
+        <div class="flex flex-1 justify-end items-center gap-4 sm:gap-8 flex-wrap">
+          <div class="flex items-center gap-4 sm:gap-9">
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Contactus.html">تماس با ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Address.html">آدرس ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="alireza/index.html">وبلاگ من</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Nazar.html">درباره ما</a>
+            <a class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90" href="Shop.html">فروشگاه</a>
+          </div>
+
+          <div class="flex items-center gap-2 mt-2 sm:mt-0">
+            <a href="sing.html" class="flex items-center justify-center rounded-full bg-[#2d372a] text-white text-sm font-bold h-10 px-4 transition duration-200 hover:text-white/80">
+              <span class="truncate">ثبت نام</span>
+            </a>
+
+            <button class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z" />
+              </svg>
+            </button>
+
+            <a href="sabad.html" class="relative">
+              <button class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                  <path d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z" />
+                </svg>
+              </button>
+              <span id="cart-item-count" class="cart-badge">0</span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="px-40 flex mt-10 flex-1 justify-center py-5">
+        <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+          <div class="@container">
+            <div class="@[480px]:p-4">
+              <div
+                class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10"
+                style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("img/ChatGPT\ Image\ Jun\ 24\,\ 2025\,\ 10_25_14\ AM.png");'
+              >
+                <div class="flex flex-col gap-2 text-left">
+                  <h1 class="text-white text-2xl font-medium leading-normal tracking-[-0.01em] @[480px]:text-4xl @[480px]:font-medium @[480px]:leading-normal @[480px]:tracking-[-0.01em]">
+                    یکی از بزرگ‌ترین شرکت‌های فروش قطعات کامپیوتر
+                  </h1>
+
+
+                  <h2 class="text-white text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal text-right text-justify rtl">
+                    ما در این جا به شما بهترین و با کیفیت ترین اجناس را ارائه می‌دهیم
+                  </h2>
+
+                </div>
+                <a class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-[#53d22c] text-[#131712] text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em]" href="Shop.html">
+                  <span class="truncate">همین الان خرید کن</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const cartItemCountSpan = document.getElementById('cart-item-count');
+
+        // Initialize cart from Local Storage (assuming 'cart' is stored as JSON)
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Function to update the cart item count in the header
+        function updateCartCount() {
+          const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+          cartItemCountSpan.textContent = totalItems;
+          if (totalItems > 0) {
+            cartItemCountSpan.style.display = 'flex'; // Show count if items exist
+          } else {
+            cartItemCountSpan.style.display = 'none'; // Hide count if no items
+          }
+        }
+
+        // Initial update of cart count when the page loads
+        updateCartCount();
+      });
+    </script>
+  </body>
+</html>

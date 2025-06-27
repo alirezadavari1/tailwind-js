@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Vazirmatn:wght@400;500;700;900&family=Manrope%3Awght%40400%3B500%3B700%3B800"
+    />
+
+    <title id="productPageTitle">NovaTech</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      body {
+        font-family: "Vazirmatn", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="relative flex size-full min-h-screen flex-col bg-[#131712] dark group/design-root overflow-x-hidden"
+      style='font-family: "Vazirmatn", sans-serif;'
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2d372a] px-6 sm:px-10 py-4"
+        >
+          <div class="flex items-center gap-4 text-white">
+            <div class="size-4">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <a class="text-white text-lg font-bold tracking-[-0.015em]" href="Home.html"
+              >NovaTech</a
+            >
+          </div>
+
+          <div class="flex flex-1 justify-end items-center gap-4 sm:gap-8 flex-wrap">
+            <div class="flex items-center gap-4 sm:gap-9">
+              <a
+                class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90"
+                href="Contactus.html"
+                >تماس با ما</a
+              >
+              <a
+                class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90"
+                href="Address.html"
+                >آدرس ما</a
+              >
+              <a
+                class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90"
+                href="alireza/index.html"
+                >وبلاگ من</a
+              >
+              <a
+                class="text-white text-sm font-medium transition duration-200 hover:scale-105 hover:text-white/90"
+                href="Nazar.html"
+                >ثبت نظر</a
+              >
+            </div>
+
+            <div class="flex items-center gap-2 mt-2 sm:mt-0">
+              <a
+                href="sing.html"
+                class="flex items-center justify-center rounded-full bg-[#2d372a] text-white text-sm font-bold h-10 px-4 transition duration-200 hover:text-white/80"
+              >
+                <span class="truncate">ثبت نام</span>
+              </a>
+
+              <button
+                class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path
+                    d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
+                  ></path>
+                </svg>
+              </button>
+
+              <a href="sabad.html">
+                <button
+                  class="flex items-center justify-center rounded-full h-10 px-2.5 bg-[#2d372a] text-white transition transform duration-200 hover:scale-105 hover:text-white/80"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
+                    <path
+                      d="M216,40H40A16,16,0,0,0,24,56V200a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A16,16,0,0,0,216,40Zm0,160H40V56H216V200ZM176,88a48,48,0,0,1-96,0,8,8,0,0,1,16,0,32,32,0,0,0,64,0,8,8,0,0,1,16,0Z"
+                    ></path>
+                  </svg>
+                </button>
+              </a>
+            </div>
+          </div>
+        </header>
+        <div class="px-6 sm:px-10 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap gap-2 p-4">
+              <a class="text-[#a5b6a0] text-base font-medium leading-normal" href="Home.html"
+                >خانه</a
+              >
+              <span class="text-[#a5b6a0] text-base font-medium leading-normal">/</span>
+              <a class="text-[#a5b6a0] text-base font-medium leading-normal" href="Shop.html"
+                >فروشگاه</a
+              >
+              <span class="text-[#a5b6a0] text-base font-medium leading-normal">/</span>
+              <span class="text-white text-base font-medium leading-normal" id="productCategory"
+                >دسته‌بندی</span
+              >
+            </div>
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <div class="flex min-w-72 flex-col gap-3">
+                <p
+                  class="text-white tracking-light text-[32px] font-bold leading-tight"
+                  id="productTitle"
+                >
+                  نام محصول
+                </p>
+                <p class="text-[#a5b6a0] text-sm font-normal leading-normal" id="productSubtitle">
+                  توضیح کوتاه محصول
+                </p>
+              </div>
+            </div>
+            <div class="flex w-full grow bg-[#131712] @container p-4">
+              <div
+                class="w-full gap-1 overflow-hidden bg-[#131712] @[480px]:gap-2 aspect-[3/2] rounded-xl flex"
+              >
+                <div
+                  class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+                  id="productImage"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC9N4ZV1gq60pT-FAOZmnV5bENTdzpvm8iV7NUeTBvQCqM_fKaIyHDgWWURFBr-9cog1pE7zbq8KOKkntpkWNJY8b7xXnXUsjr2uDVJpmdG0EMGakoxUh42dxs3p9SJLpqRv-cobA66UpiK8iS6NEuvx4m5mJ7lN16upgaWpv1BrN1zEOB6HJytkenOiKai1pkhYwBxpbuEFStCeOOzutqto3HRDAvsMS7me91hovBB_TDP4jXfpatj4VYTB9tonktgg47LXgFLLTaP");'
+                ></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-5 p-4" id="colorOptionsContainer"></div>
+            <h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">
+              جزئیات محصول
+            </h3>
+            <div class="flex flex-col p-4 gap-3">
+              <details class="flex flex-col rounded-xl bg-[#2d372a] px-4 py-2 group" open="">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">توضیحات</p>
+                  <div
+                    class="text-white group-open:rotate-180"
+                    data-icon="CaretDown"
+                    data-size="20px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </summary>
+                <p class="text-[#a5b6a0] text-sm font-normal leading-normal pb-2" id="productDescription">
+                  توضیحات کامل محصول
+                </p>
+              </details>
+              <details class="flex flex-col rounded-xl bg-[#2d372a] px-4 py-2 group">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">مشخصات فنی</p>
+                  <div
+                    class="text-white group-open:rotate-180"
+                    data-icon="CaretDown"
+                    data-size="20px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </summary>
+                <p
+                  class="text-[#a5b6a0] text-sm font-normal leading-normal pb-2"
+                  id="productSpecifications"
+                >
+                  مشخصات فنی محصول
+                </p>
+              </details>
+              <details class="flex flex-col rounded-xl bg-[#2d372a] px-4 py-2 group">
+                <summary class="flex cursor-pointer items-center justify-between gap-6 py-2">
+                  <p class="text-white text-sm font-medium leading-normal">نظرات</p>
+                  <div
+                    class="text-white group-open:rotate-180"
+                    data-icon="CaretDown"
+                    data-size="20px"
+                    data-weight="regular"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20px"
+                      height="20px"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                    >
+                      <path
+                        d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                      ></path>
+                    </svg>
+                  </div>
+                </summary>
+                <div class="flex flex-col gap-3 pb-2" id="productReviews"></div>
+              </details>
+            </div>
+            <div class="flex justify-end p-4">
+              <button
+                class="flex items-center justify-center rounded-full bg-[#a5b6a0] px-6 py-3 text-[#131712] text-base font-bold leading-normal tracking-[0.015em] shadow-lg"
+              >
+                افزودن به سبد خرید - <span id="productPrice">1,999,000 تومان</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // تعریف داده‌های محصولات
+      const productsData = [
+        {
+          id: "1",
+          category: "گجت‌ها",
+          title: "هدفون کوانتوم ایکس",
+          subtitle: "تجربه صوتی عالی",
+          image: "/img/Copilot_20250624_120635.png",
+          colors: ["#000000", "#ffffff", "#808080"],
+          description:
+            "با هدفون‌های Quantum X، وارد دنیایی از صدا شوید که تاکنون تجربه نکرده‌اید. این هدفون‌ها با درایورهای قدرتمند و طراحی ارگونومیک، بالاترین کیفیت صدا و راحتی بی‌نظیر را ارائه می‌دهند. نویز کنسلینگ فعال و اتصال بی‌سیم پایدار، شما را در موسیقی‌تان غرق می‌کند.",
+          specifications:
+            "قطر درایور: 50mm, پاسخ فرکانسی: 10Hz-28kHz, عمر باتری: 40 ساعت, نوع اتصال: بلوتوث 5.2 و جک 3.5mm, دارای نویز کنسلینگ فعال.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuCmUQdDg4PNUJK-CBWUMfIy_tom3wbPPkJMizlHwAVtnA1ccSeX-QElvRcH9-qIQNVybDJeZbSMVJQB0LLvYNvqtYw0lzLFhXf8nso6B3adbETaMZMMHg-Xw3k7kttStpRVTikJQktdvLa5tV8OkfG_edTD1mMJptoL59uaD3xDskTjlfgwaqA0H8mRWoMU5O6mb3511yarVPaZQFBnwcLXPDKQb5uM47iWvmW0QvALNDveMjD8AgdItn571xIZkbKGkHFRM-4xPfaf",
+              userName: "سارا احمدی",
+              date: "2024-05-20",
+              rating: 5,
+              comment: "کیفیت صدای این هدفون‌ها فوق‌العاده‌ست! کاملاً از خریدم راضی‌ام.",
+              likes: 15,
+              dislikes: 0,
+            },
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAa8QVTfJ3oB-JkfrEz6En-93mT-eakLxgV6WylnRlzXMlmwWJd9R5gzZR4oK-PlQI6SvtiHspPzX9xhGFMLsYBTKne6FUtiD-C1fGbiIfZY6ozwRDhVOmpcpgmm_bEms7Sc54ZCFKZ4zG7INGLSm-sohe8wV8CGB5gyOx-bW-wG2DSjk2v5OxWhVxI6AiWGjgwQMjS__azgtzW5J9dN56GawYmB0Vhdsq8_VDcXcWPNiovStXbJSVWhhx50MKzOixTNj6boL2BJbFJ",
+              userName: "رضا کریمی",
+              date: "2024-05-10",
+              rating: 4,
+              comment: "بسیار راحت و باکیفیت، فقط قیمت کمی بالاست.",
+              likes: 8,
+              dislikes: 2,
+            },
+          ],
+          price: "1,999,000 تومان",
+        },
+        {
+          id: "2",
+          category: "پوشاک",
+          title: "ساعت هوشمند ChronoShift",
+          subtitle: "تکنولوژی زمان‌خم‌کنندگی",
+          image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDzBAZLDFMYgM5DclfuskZLoX2MxnNKnpptBhIpKtwlQhXkuBJcT2nEiYd4ZlTk633gNoM9GlRow3IAAJkTAiOlxXX4mCTpcOXtjXVfgLHg1Wa98zKR3PwsOCKsY0tafeTNWi0_NyBIInPpCZZZz8xZIK084_IbLP_4cO4r64c2ApvvVGC419UQHXdtpMac5ZVgBvuL5XshHyFlxMhhyaQBVyWuscbrE5ctle9yZdA9IOfGdLnbX43WHG5ZQHwK4jg-ZFmgr_rYDKo_",
+          colors: ["#2C3E50", "#8E44AD", "#3498DB"],
+          description:
+            "ساعت هوشمند ChronoShift فراتر از یک نمایشگر زمان است. با قابلیت‌های پیشرفته ردیابی سلامت، GPS دقیق، و طراحی منحصر به فرد، هر لحظه از زندگی شما را متحول می‌کند. از تماس‌ها و پیام‌ها گرفته تا پایش فعالیت‌های ورزشی، همه چیز در دسترس شماست.",
+          specifications:
+            "نمایشگر: AMOLED لمسی، سنسورها: ضربان قلب، اکسیژن خون، GPS, مقاومت در برابر آب: 5ATM, عمر باتری: تا 7 روز.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuAfsyFRdhT1werIXOstRTs6jAkp0bX0HiO597oUu6-VNXNiyxAdmFrzPxQQn0zG90QowxeI1d3-BNfDVJd7kj6BGF2qpcxDIQ-C-81aOGKUm_CLs1hzgQLFaYFuPGFYrfCpx-PyEYalGm8cpB5vJ3x50ZOsMl4ngH2zjo4oSdhIMrsW4oTmFvoEP08o0LTAnJJG2f9u0YOBZiFcVfLHSAXxKFVAZWc_CBgT_4YQyf5AN8CFI3gzEu6EFrcOLGGkwPKXGpDDhH_EswUM",
+              userName: "مریم حسینی",
+              date: "2024-06-01",
+              rating: 5,
+              comment: "زیبا، کاربردی و پر از امکانات. بهترین ساعت هوشمندی که داشتم!",
+              likes: 20,
+              dislikes: 1,
+            },
+          ],
+          price: "950,000 تومان",
+        },
+        {
+          id: "3",
+          category: "صوتی تصویری",
+          title: "پروژکتور نبولا",
+          subtitle: "تصاویر کیهانی در خانه",
+          image: "/img/Copilot_20250624_120151.png",
+          colors: ["#000000", "#FFD700"],
+          description:
+            "پروژکتور نبولا، سینما را به خانه شما می‌آورد. با کیفیت تصویر فوق‌العاده و قابلیت پخش تا 150 اینچ، هر فیلم و برنامه‌ای را با جزئیات خیره‌کننده تماشا کنید. نصب آسان و قابلیت اتصال به انواع دستگاه‌ها، آن را به انتخابی بی‌نظیر تبدیل کرده است.",
+          specifications:
+            "رزولوشن: Full HD 1080p, روشنایی: 3000 لومن, نسبت کنتراست: 10000:1, عمر لامپ: 50,000 ساعت, ورودی‌ها: HDMI, USB, VGA.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDStM79WMoZZxq3V-GtnNQ7vWCL8Z6gnLUcsC7xNOj6TpKJYToyRscLv4vRbImFV6ekDeqfoYJJKNoNwYfLbryPm63TNt21C2OuLJmUTQi0_yhCOVpx5BRB9-4sYF9KfzQ8Xq4LhpUfq4u1yqqs-tBaNIEHcEXFuozE2_RUn0rqrwVIb8E-dMRDLGDFXCbHofYivet3rAGMf1IKzdGS5WdIUrlc9A3lPg73WIoiSVoeiQgMZI3jVSxRN9ZrTM5VyzbW2AAgXHFy7IBn",
+              userName: "علیرضا نجفی",
+              date: "2024-05-25",
+              rating: 4,
+              comment: "تصویرش واقعا عالیه، ولی بلندگوش می‌توانست قوی‌تر باشه.",
+              likes: 10,
+              dislikes: 0,
+            },
+          ],
+          price: "3,500,000 تومان",
+        },
+        {
+          id: "4",
+          category: "صوتی",
+          title: "هدفون‌های اکوپالس",
+          subtitle: "صدای شفاف و کریستالی",
+          image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0Es4s1Sq_PSxatImGqgSaFgOx9L4655VmbdOVUemLtUIsQAERvykdQfakfdwgZM0v07jjWUo1jgpTNAu65xMtm4PN_CPJb0dRUlKlf6mgx09YlDikVAOkFz6GxHSAeeV6mC__vsAbEdgC2xS3k7zPTrlyGgk5rlboa4b9MV1lsJcWX0UAWnvGhsHd5erNOOErbhvXZlDrYoVuJg4fhBjjyiTP8_jAEf9ECogPrLlbEWVuN3_l6H849mbUYgc3K6ikqfaqvlsLtOs9",
+          colors: ["#FFFFFF", "#1E90FF"],
+          description:
+            "هدفون‌های اکوپالس برای ارائه صدایی شفاف و زنده طراحی شده‌اند. با وزن سبک و طراحی ارگونومیک، مناسب برای استفاده طولانی‌مدت در طول روز یا هنگام ورزش. میکروفون داخلی با کیفیت بالا برای تماس‌های واضح.",
+          specifications:
+            "نوع: توگوشی بی‌سیم, عمر باتری: 6 ساعت پخش مداوم, کیس شارژ: 24 ساعت شارژ اضافی, مقاومت: IPX4 (مقاوم در برابر پاشش آب).",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDStM79WMoZZxq3V-GtnNQ7vWCL8Z6gnLUcsC7xNOj6TpKJYToyRscLv4vRbImFV6ekDeqfoYJJKNoNwYfLbryPm63TNt21C2OuLJmUTQi0_yhCOVpx5BRB9-4sYF9KfzQ8Xq4LhpUfq4u1yqqs-tBaNIEHcEXFuozE2_RUn0rqrwVIb8E-dMRDLGDFXCbHofYivet3rAGMf1IKzdGS5WdIUrlc9A3lPg73WIoiSVoeiQgMZI3jVSxRN9ZrTM5VyzbW2AAgXHFy7IBn6",
+              userName: "نازنین قاسمی",
+              date: "2024-04-18",
+              rating: 5,
+              comment: "عالی برای مکالمات و گوش دادن به موسیقی. بیس خوبی هم داره.",
+              likes: 18,
+              dislikes: 0,
+            },
+          ],
+          price: "780,000 تومان",
+        },
+        {
+          id: "5",
+          category: "پهپاد",
+          title: "پهپاد سولاریس",
+          subtitle: "عکاسی هوایی خودران",
+          image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiWoR856pij6hCWI2VDzl3JsUdZaH4FDflDJAMlV5rI5OiJv64UerN-eDlDfGQLQ2_HaG3e2WiZjKL7I3-wj6Q7AV5uzGS1vd92aB6ZLSebBX2iFclFNN4M0FMIHoccAClEHwjcE8yUyH19fCzXsQkdGf8KNx713v3NmHxNamjwUcZTtQ-5CAOMJRcfZHyFoKlDvdS9Gs_GkckrENFgqCLl_BoMSRGCLQf2e6hL-pEZOidVSgQiyOLqVfkm9UtS9ZFc7cU5JtVSFMc",
+          colors: ["#696969", "#FF4500"],
+          description:
+            "پهپاد سولاریس با قابلیت‌های پرواز خودران و دوربین 4K، بهترین همراه شما برای ثبت لحظات از آسمان است. حالت‌های پرواز هوشمند و پایداری بالا، حتی برای مبتدیان نیز قابل کنترل است.",
+          specifications:
+            "کیفیت دوربین: 4K UHD, زمان پرواز: 30 دقیقه, حداکثر برد: 5 کیلومتر, حالت‌های پرواز: دنبال کردن سوژه، بازگشت به خانه.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuBzfaDjkvqZDS5b-1Fpw1qX9Ch4XvODNjtXdYtBw0By2CA0e90A3vixinqXK1f0Ph6FSD58aandT6U4BdTbLaV2KaqNN8INlQlofWfRpIm31lhzkHyEbSfJARKFZxu1-YrixqVkCtR2liCac8QNjfxd8cucpO-uWtRVAQYFFkp9Iv8oXHj451-Vl69DmNla6U2ARApBxfeCGPM-Rwy-PZbkxl-LXyzXtVYMvQCX6Mxsv323VpGVVp2w6vhdus0oKDDKtGzNHpEzgEsk",
+              userName: "کسری شفیعی",
+              date: "2024-03-10",
+              rating: 5,
+              comment: "عکس‌ها و فیلم‌های بی‌نظیری می‌گیره. خیلی ازش راضی‌ام.",
+              likes: 22,
+              dislikes: 1,
+            },
+          ],
+          price: "12,500,000 تومان",
+        },
+        {
+          id: "6",
+          category: "لوازم جانبی",
+          title: "کیبورد لومینا",
+          subtitle: "بازخورد لمسی نورانی",
+          image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC3yCfz6uyWuNvgOoROOwsCnlowbx7H9HYQa0bfAyiR_A-2JMWKC_S6wedQA_1PoErefOFOBhjZ4FPWOxprUtVjHQFCjVaWkhasvi3T-INYd3eAMOQKXPfnbCeOTx2TXiEim_n8x1upeXAuOmWvMH8VNID_F4rt6wYv0cjJQwqQ_vUz_XohFNfWmj_scc8L4-DzoiggfEgxrNwyEuBkJ3GkdIb5ph4MAORDDswpMu7smQbnxr_cX-x_n800cYXMqHh-DgqftDUnEfWm",
+          colors: ["#000000", "#00FF00", "#FF00FF"],
+          description:
+            "کیبورد لومینا با نورپردازی RGB قابل تنظیم و کلیدهای مکانیکی پاسخگو، تجربه تایپ و بازی بی‌نظیری را ارائه می‌دهد. بازخورد لمسی دقیق و مقاومت بالا، آن را به ابزاری ایده‌آل برای استفاده طولانی‌مدت تبدیل کرده است.",
+          specifications:
+            "نوع کلید: مکانیکی (سوئیچ آبی/قرمز/قهوه‌ای), نورپردازی: RGB قابل برنامه‌ریزی, اتصال: USB سیمی, طول عمر کلید: 50 میلیون کلیک.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDStM79WMoZZxq3V-GtnNQ7vWCL8Z6gnLUcsC7xNOj6TpKJYToyRscLv4vRbImFV6ekDeqfoYJJKNoNwYfLbryPm63TNt21C2OuLJmUTQi0_yhCOVpx5BRB9-4sYF9KfzQ8Xq4LhpUfq4u1yqqs-tBaNIEHcEXFuozE2_RUn0rqrwVIb8E-dMRDLGDFXCbHofYivet3rAGMf1IKzdGS5WdIUrlc9A3lPg73WIoiSVoeiQgMZI3jVSxRN9ZrTM5VyzbW2AAgXHFy7IBn7",
+              userName: "ندا پوراحمد",
+              date: "2024-02-28",
+              rating: 4,
+              comment: "کیبورد خیلی خوبیه، نورپردازیش عالیه. فقط کمی صدای کلیدها زیاده.",
+              likes: 10,
+              dislikes: 3,
+            },
+          ],
+          price: "1,100,000 تومان",
+        },
+        {
+          id: "7",
+          category: "امنیت",
+          title: "دوربین امنیتی هوشمند",
+          subtitle: "نظارت 24 ساعته با کیفیت بالا",
+          image: "/img/images (1).jfif",
+          colors: ["#FFFFFF", "#000000"],
+          description:
+            "این دوربین امنیتی هوشمند با کیفیت تصویر 1080p و دید در شب پیشرفته، محافظت کاملی از خانه یا محل کار شما ارائه می‌دهد. قابلیت تشخیص حرکت و هشدار فوری به تلفن همراه، امنیت شما را تضمین می‌کند.",
+          specifications:
+            "رزولوشن: 1080p Full HD, دید در شب: تا 10 متر, تشخیص: حرکت و صدا, ذخیره‌سازی: کارت حافظه و ابری, اتصال: Wi-Fi.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDStM79WMoZZxq3V-GtnNQ7vWCL8Z6gnLUcsC7xNOj6TpKJYToyRscLv4vRbImFV6ekDeqfoYJJKNoNwYfLbryPm63TNt21C2OuLJmUTQi0_yhCOVpx5BRB9-4sYF9KfzQ8Xq4LhpUfq4u1yqqs-tBaNIEHcEXFuozE2_RUn0rqrwVIb8E-dMRDLGDFXCbHofYivet3rAGMf1IKzdGS5WdIUrlc9A3lPg73WIoiSVoeiQgMZI3jVSxRN9ZrTM5VyzbW2AAgXHFy7IBn8",
+              userName: "پویا داودی",
+              date: "2024-06-05",
+              rating: 5,
+              comment: "نصبش آسون بود و کیفیت تصویرش عالیه. خیلی ازش راضی‌ام.",
+              likes: 12,
+              dislikes: 0,
+            },
+          ],
+          price: "1,500,000 تومان",
+        },
+        {
+          id: "8",
+          category: "شارژر",
+          title: "شارژر بی‌سیم سریع",
+          subtitle: "شارژ سریع و ایمن برای دستگاه‌ها",
+          image: "/img/Copilot_20250624_121003.png",
+          colors: ["#36454F", "#DCDCDC"],
+          description:
+            "شارژر بی‌سیم سریع NovaTech، دستگاه‌های شما را با حداکثر سرعت و امنیت شارژ می‌کند. طراحی زیبا و جمع و جور آن را برای هر میزی مناسب ساخته است. سازگار با انواع گوشی‌های هوشمند دارای قابلیت شارژ بی‌سیم.",
+          specifications:
+            "توان خروجی: 15W, استاندارد: Qi, دارای سیستم خنک‌کننده, محافظت در برابر ولتاژ و گرمای بیش از حد.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDStM79WMoZZxq3V-GtnNQ7vWCL8Z6gnLUcsC7xNOj6TpKJYToyRscLv4vRbImFV6ekDeqfoYJJKNoNwYfLbryPm63TNt21C2OuLJmUTQi0_yhCOVpx5BRB9-4sYF9KfzQ8Xq4LhpUfq4u1yqqs-tBaNIEHcEXFuozE2_RUn0rqrwVIb8E-dMRDLGDFXCbHofYivet3rAGMf1IKzdGS5WdIUrlc9A3lPg73WIoiSVoeiQgMZI3jVSxRN9ZrTM5VyzbW2AAgXHFy7IBn9",
+              userName: "شادی نادری",
+              date: "2024-05-15",
+              rating: 4,
+              comment: "واقعا سریع شارژ می‌کنه، ولی کمی گرونه.",
+              likes: 7,
+              dislikes: 1,
+            },
+          ],
+          price: "450,000 تومان",
+        },
+        {
+          id: "9",
+          category: "سلامت",
+          title: "مچ‌بند هوشمند سلامت",
+          subtitle: "ردیابی ضربان قلب و فعالیت بدنی",
+          image: "/img/280x280.jpg",
+          colors: ["#1F75FE", "#8A2BE2"],
+          description:
+            "مچ‌بند هوشمند سلامت NovaTech، همراهی عالی برای پایش وضعیت جسمانی شماست. ضربان قلب، کالری سوزانده شده، و کیفیت خواب شما را ردیابی می‌کند و به شما کمک می‌کند تا به اهداف سلامتی‌تان برسید.",
+          specifications:
+            "سنسورها: ضربان قلب، قدم‌شمار, ضدآب: IP68, عمر باتری: تا 14 روز, سازگار با: iOS و Android.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDzBAZLDFMYgM5DclfuskZLoX2MxnNKnpptBhIpKtwlQhXkuBJcT2nEiYd4ZlTk633gNoM9GlRow3IAAJkTAiOlxXX4mCTpcOXtjXVfgLHg1Wa98zKR3PwsOCKsY0tafeTNWi0_NyBIInPpCZZZz8xZIK084_IbLP_4cO4r64c2ApvvVGC419UQHXdtpMac5ZVgBvuL5XshHyFlxMhhyaQBVyWuscbrE5ctle9yZdA9IOfGdLnbX43WHG5ZQHwK4jg-ZFmgr_rYDKo_0",
+              userName: "حامد ناصری",
+              date: "2024-06-02",
+              rating: 5,
+              comment: "دقیق و کاربردی. اطلاعات خوبی بهم میده.",
+              likes: 10,
+              dislikes: 0,
+            },
+          ],
+          price: "600,000 تومان",
+        },
+        {
+          id: "10",
+          category: "لوازم جانبی",
+          title: "کیف لپ‌تاپ ضدآب",
+          subtitle: "محافظت کامل و طراحی مدرن",
+          image: "/img/photo_2021-07-26_01-49-25.jpg",
+          colors: ["#343A40", "#6C757D"],
+          description:
+            "کیف لپ‌تاپ ضدآب NovaTech با طراحی شیک و مدرن، محافظت بی‌نظیری برای لپ‌تاپ و لوازم جانبی شما فراهم می‌کند. جنس مقاوم در برابر آب و ضربه، امنیت دستگاه شما را در هر شرایطی تضمین می‌کند.",
+          specifications:
+            "جنس: پارچه ضدآب نایلون, ظرفیت: مناسب لپ‌تاپ‌های 13 تا 15 اینچ, دارای جیب‌های متعدد, زیپ‌های ضدآب.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0Es4s1Sq_PSxatImGqgSaFgOx9L4655VmbdOVUemLtUIsQAERvykdQfakfdwgZM0v07jjWUo1jgpTNAu65xMtm4PN_CPJb0dRUlKlf6mgx09YlDikVAOkFz6GxHSAeeV6mC__vsAbEdgC2xS3k7zPTrlyGgk5rlboa4b9MV1lsJcWX0UAWnvGhsHd5erNOOErbhvXZlDrYoVuJg4fhBjjyiTP8_jAEf9ECogPrLlbEWVuN3_l6H849mbUYgc3K6ikqfaqvlsLtOs95",
+              userName: "زینب محمدی",
+              date: "2024-05-18",
+              rating: 4,
+              comment: "کیفیتش خوبه، ولی ای کاش رنگ‌بندی بیشتری داشت.",
+              likes: 5,
+              dislikes: 0,
+            },
+          ],
+          price: "550,000 تومان",
+        },
+        {
+          id: "11",
+          category: "صوتی",
+          title: "هدفون بی‌سیم ورزشی",
+          subtitle: "مقاوم در برابر تعریق و کیفیت بالا",
+          image: "/img/Untitled-12-4.png",
+          colors: ["#000000", "#FF0000", "#008000"],
+          description:
+            "هدفون‌های بی‌سیم ورزشی NovaTech با طراحی ارگونومیک و مقاومت در برابر تعریق، همراه ایده‌آل شما برای تمرینات ورزشی هستند. کیفیت صدای عالی و عمر باتری طولانی، موسیقی شما را در تمام طول تمرین حفظ می‌کند.",
+          specifications:
+            "نوع: توگوشی بی‌سیم, مقاومت: IPX7 (ضدآب و ضدتعریق), عمر باتری: 8 ساعت, قلاب گوش برای ثبات بیشتر.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0Es4s1Sq_PSxatImGqgSaFgOx9L4655VmbdOVUemLtUIsQAERvykdQfakfdwgZM0v07jjWUo1jgpTNAu65xMtm4PN_CPJb0dRUlKlf6mgx09YlDikVAOkFz6GxHSAeeV6mC__vsAbEdgC2xS3k7zPTrlyGgk5rlboa4b9MV1lsJcWX0UAWnvGhsHd5erNOOErbhvXZlDrYoVuJg4fhBjjyiTP8_jAEf9ECogPrLlbEWVuN3_l6H849mbUYgc3K6ikqfaqvlsLtOs96",
+              userName: "مجید رستمی",
+              date: "2024-06-10",
+              rating: 5,
+              comment: "برای باشگاه عالیه! اصلا از گوشم نمی‌افته و صداش حرف نداره.",
+              likes: 18,
+              dislikes: 0,
+            },
+          ],
+          price: "890,000 تومان",
+        },
+        {
+          id: "12",
+          category: "لوازم جانبی",
+          title: "پایه نگهدارنده موبایل",
+          subtitle: "قابل تنظیم و مناسب برای میز کار",
+          image: "/img/images.jfif",
+          colors: ["#696969", "#D3D3D3"],
+          description:
+            "پایه نگهدارنده موبایل NovaTech، راه حلی عالی برای استفاده راحت از گوشی شما روی میز کار، آشپزخانه یا هر سطح دیگری است. طراحی تاشو و قابل تنظیم ارتفاع و زاویه، آن را بسیار کاربردی می‌کند.",
+          specifications:
+            "جنس: آلیاژ آلومینیوم, قابلیت تنظیم: ارتفاع و زاویه, سازگاری: تمام گوشی‌های هوشمند و تبلت‌های کوچک.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0Es4s1Sq_PSxatImGqgSaFgOx9L4655VmbdOVUemLtUIsQAERvykdQfakfdwgZM0v07jjWUo1jgpTNAu65xMtm4PN_CPJb0dRUlKlf6mgx09YlDikVAOkFz6GxHSAeeV6mC__vsAbEdgC2xS3k7zPTrlyGgk5rlboa4b9MV1lsJcWX0UAWnvGhsHd5erNOOErbhvXZlDrYoVuJg4fhBjjyiTP8_jAEf9ECogPrLlbEWVuN3_l6H849mbUYgc3K6ikqfaqvlsLtOs97",
+              userName: "آرزو شریفی",
+              date: "2024-05-01",
+              rating: 4,
+              comment: "کاربردی و محکم. فقط کاش کمی سنگین‌تر بود.",
+              likes: 6,
+              dislikes: 0,
+            },
+          ],
+          price: "180,000 تومان",
+        },
+        {
+          id: "13",
+          category: "گیمینگ",
+          title: "موس گیمینگ NovaFury",
+          subtitle: "یکی از بهترین کارهای ما در این سایت",
+          image: "/img/images (2).jfif",
+          colors: ["#000000", "#FF0000", "#0000FF"],
+          description:
+            "موس گیمینگ NovaFury با دقت بالا، دکمه‌های قابل برنامه‌ریزی، و نورپردازی RGB پویا، تجربه گیمینگ شما را به سطح بعدی می‌برد. طراحی ارگونومیک آن باعث می‌شود ساعت‌ها بدون خستگی بازی کنید.",
+          specifications:
+            "DPI: تا 16000, سنسور: اپتیکال پیشرفته, دکمه‌ها: 8 دکمه قابل برنامه‌ریزی, اتصال: USB سیمی, طول کابل: 1.8 متر.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0Es4s1Sq_PSxatImGqgSaFgOx9L4655VmbdOVUemLtUIsQAERvykdQfakfdwgZM0v07jjWUo1jgpTNAu65xMtm4PN_CPJb0dRUlKlf6mgx09YlDikVAOkFz6GxHSAeeV6mC__vsAbEdgC2xS3k7zPTrlyGgk5rlboa4b9MV1lsJcWX0UAWnvGhsHd5erNOOErbhvXZlDrYoVuJg4fhBjjyiTP8_jAEf9ECogPrLlbEWVuN3_l6H849mbUYgc3K6ikqfaqvlsLtOs98",
+              userName: "کوروش مرادی",
+              date: "2024-06-15",
+              rating: 5,
+              comment: "دقتش بی‌نظیره و تو بازی‌ها واقعاً کمک می‌کنه. عالیه!",
+              likes: 25,
+              dislikes: 0,
+            },
+          ],
+          price: "750,000 تومان",
+        },
+        {
+          id: "14",
+          category: "ذخیره‌سازی",
+          title: "هارد اکسترنال 1 ترابایت",
+          subtitle: "هارد اکسترنال یکی از خفن‌ترین کارهای بازار",
+          image: "/img/images (3).jfif",
+          colors: ["#1C1C1C", "#696969"],
+          description:
+            "این هارد اکسترنال با ظرفیت 1 ترابایت، فضای کافی برای تمام فایل‌ها، عکس‌ها و ویدئوهای شما را فراهم می‌کند. سرعت انتقال داده بالا و طراحی مقاوم، آن را به گزینه‌ای ایده‌آل برای ذخیره‌سازی و بکاپ‌گیری تبدیل کرده است.",
+          specifications:
+            "ظرفیت: 1 ترابایت, سرعت: USB 3.0, سازگاری: Windows و macOS, مقاوم در برابر ضربه و لرزش.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuD0Es4s1Sq_PSxatImGqgSaFgOx9L4655VmbdOVUemLtUIsQAERvykdQfakfdwgZM0v07jjWUo1jgpTNAu65xMtm4PN_CPJb0dRUlKlf6mgx09YlDikVAOkFz6GxHSAeeV6mC__vsAbEdgC2xS3k7zPTrlyGgk5rlboa4b9MV1lsJcWX0UAWnvGhsHd5erNOOErbhvXZlDrYoVuJg4fhBjjyiTP8_jAEf9ECogPrLlbEWVuN3_l6H849mbUYgc3K6ikqfaqvlsLtOs99",
+              userName: "شهین عظیمی",
+              date: "2024-04-22",
+              rating: 5,
+              comment: "کوچیک، سریع و پر ظرفیت. دقیقا چیزی که نیاز داشتم.",
+              likes: 10,
+              dislikes: 0,
+            },
+          ],
+          price: "1,300,000 تومان",
+        },
+        {
+          id: "15",
+          category: "ذخیره‌سازی",
+          title: "فلش مموری 16 گیگ سن‌دیسک",
+          subtitle: "یک فلش ساده و کم حجم برای کارهای سبک",
+          image: "/img/فلش-مموری-سن-دیسک-ظرفیت-16-گیگابایت-مدل-ultra-flair.jpg",
+          colors: ["#808080", "#000000"],
+          description:
+            "فلش مموری 16 گیگ سن‌دیسک، راه حلی ساده و قابل اعتماد برای انتقال و ذخیره‌سازی فایل‌های روزمره شماست. طراحی جمع و جور و مقاوم، آن را برای استفاده مداوم ایده‌آل می‌سازد.",
+          specifications:
+            "ظرفیت: 16 گیگابایت, سرعت: USB 2.0/3.0, طراحی: جمع و جور و مقاوم, سازگاری: تمام سیستم‌عامل‌ها.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiWoR856pij6hCWI2VDzl3JsUdZaH4FDflDJAMlV5rI5OiJv64UerN-eDlDfGQLQ2_HaG3e2WiZjKL7I3-wj6Q7AV5uzGS1vd92aB6ZLSebBX2iFclFNN4M0FMIHoccAClEHwjcE8yUyH19fCzXsQkdGf8KNx713v3NmHxNamjwUcZTtQ-5CAOMJRcfZHyFoKlDvdS9Gs_GkckrENFgqCLl_BoMSRGCLQf2e6hL-pEZOidVSgQiyOLqVfkm9UtS9ZFc7cU5JtVSFMc0",
+              userName: "میلاد یوسفی",
+              date: "2024-03-05",
+              rating: 4,
+              comment: "برای کارهای روزمره عالیه. سرعتش بد نیست.",
+              likes: 3,
+              dislikes: 0,
+            },
+          ],
+          price: "120,000 تومان",
+        },
+        {
+          id: "16",
+          category: "لوازم جانبی",
+          title: "کابل شارژ فست شارژ",
+          subtitle: "شارژ سریع و انتقال داده",
+          image: "/img/fast-charge-cable.jpg", // نیاز به اضافه کردن این عکس به پوشه img
+          colors: ["#333333", "#CC0000"],
+          description:
+            "کابل شارژ فست شارژ NovaTech، با قابلیت شارژ سریع و انتقال داده با سرعت بالا، زندگی دیجیتال شما را آسان‌تر می‌کند. ساخته شده از مواد با کیفیت برای دوام بیشتر و مقاومت در برابر خمیدگی.",
+          specifications:
+            "نوع: USB-C به USB-C/Lightning (بسته به مدل), پشتیبانی: فست شارژ تا 60W, طول: 1 متر, جنس: روکش بافته شده مقاوم.",
+          reviews: [
+            {
+              userImage: "https://lh3.googleusercontent.com/aida-public/AB6AXuDiWoR856pij6hCWI2VDzl3JsUdZaH4FDflDJAMlV5rI5OiJv64UerN-eDlDfGQLQ2_HaG3e2WiZjKL7I3-wj6Q7AV5uzGS1vd92aB6ZLSebBX2iFclFNN4M0FMIHoccAClEHwjcE8yUyH19fCzXsQkdGf8KNx713v3NmHxNamjwUcZTtQ-5CAOMJRcfZHyFoKlDvdS9Gs_GkckrENFgqCLl_BoMSRGCLQf2e6hL-pEZOidVSgQiyOLqVfkm9UtS9ZFc7cU5JtVSFMc1",
+              userName: "پریسا میرزایی",
+              date: "2024-06-20",
+              rating: 5,
+              comment: "سرعت شارژش عالیه و خیلی محکم به نظر میاد.",
+              likes: 9,
+              dislikes: 0,
+            },
+          ],
+          price: "250,000 تومان",
+        },
+      ];
+
+      // تابعی برای ایجاد ستاره‌های رتبه‌بندی
+      function createStars(rating) {
+        let starsHtml = "";
+        for (let i = 0; i < 5; i++) {
+          starsHtml += `
+            <div class="text-${
+              i < rating ? "white" : "[#5f7359]"
+            }" data-icon="Star" data-size="20px" data-weight="${i < rating ? "fill" : "regular"}">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <path
+                  d="M234.5,114.38l-45.1,39.36,13.51,58.6a16,16,0,0,1-23.84,17.34l-51.11-31-51,31a16,16,0,0,1-23.84-17.34L66.61,153.8,21.5,114.38a16,16,0,0,1,9.11-28.06l59.46-5.15,23.21-55.36a15.95,15.95,0,0,1,29.44,0h0L166,81.17l59.44,5.15a16,16,0,0,1,9.11,28.06Z"
+                ></path>
+              </svg>
+            </div>
+          `;
+        }
+        return starsHtml;
+      }
+
+      // تابعی برای بارگذاری داده‌های محصول
+      function loadProductData() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get("id"); // گرفتن ID محصول از URL
+        const product = productsData.find((p) => p.id === productId);
+
+        if (product) {
+          document.getElementById("productPageTitle").innerText = `NovaTech - ${product.title}`;
+          document.getElementById("productCategory").innerText = product.category;
+          document.getElementById("productTitle").innerText = product.title;
+          document.getElementById("productSubtitle").innerText = product.subtitle;
+          document.getElementById("productImage").style.backgroundImage = `url("${product.image}")`;
+          document.getElementById("productDescription").innerText = product.description;
+          document.getElementById("productSpecifications").innerText = product.specifications;
+          document.getElementById("productPrice").innerText = product.price;
+
+          // بارگذاری رنگ‌ها
+          const colorOptionsContainer = document.getElementById("colorOptionsContainer");
+          colorOptionsContainer.innerHTML = ""; // پاک کردن گزینه‌های قبلی
+          product.colors.forEach((color, index) => {
+            const label = document.createElement("label");
+            label.className =
+              "size-10 rounded-full border border-[#42513e] ring-[color-mix(in_srgb,#ffffff_50%,_transparent)] has-[:checked]:border-[3px] has-[:checked]:border-[#131712] has-[:checked]:ring";
+            label.style.backgroundColor = color;
+            label.innerHTML = `<input type="radio" class="invisible" name="productColor" ${
+              index === 0 ? "checked" : ""
+            } />`;
+            colorOptionsContainer.appendChild(label);
+          });
+
+          // بارگذاری نظرات
+          const reviewsContainer = document.getElementById("productReviews");
+          reviewsContainer.innerHTML = ""; // پاک کردن نظرات قبلی
+          if (product.reviews && product.reviews.length > 0) {
+            product.reviews.forEach((review) => {
+              const reviewDiv = document.createElement("div");
+              reviewDiv.className = "flex flex-col gap-3 bg-[#131712]";
+              reviewDiv.innerHTML = `
+                  <div class="flex items-center gap-3">
+                    <div
+                      class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+                      style='background-image: url("${review.userImage}");'
+                    ></div>
+                    <div class="flex-1">
+                      <p class="text-white text-base font-medium leading-normal">${review.userName}</p>
+                      <p class="text-[#a5b6a0] text-sm font-normal leading-normal">${review.date}</p>
+                    </div>
+                  </div>
+                  <div class="flex gap-0.5">
+                    ${createStars(review.rating)}
+                  </div>
+                  <p class="text-white text-base font-normal leading-normal">${review.comment}</p>
+                  <div class="flex gap-9 text-[#a5b6a0]">
+                    <button class="flex items-center gap-2">
+                      <div class="text-inherit" data-icon="ThumbsUp" data-size="20px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M234,80.12A24,24,0,0,0,216,72H160V56a40,40,0,0,0-40-40,8,8,0,0,0-7.16,4.42L75.06,96H32a16,16,0,0,0-16,16v88a16,16,0,0,0,16,16H204a24,24,0,0,0,23.82-21l12-96A24,24,0,0,0,234,80.12ZM32,112H72v88H32ZM223.94,97l-12,96a8,8,0,0,1-7.94,7H88V105.89l36.71-73.43A24,24,0,0,1,144,56V80a8,8,0,0,0,8,8h64a8,8,0,0,1,7.94,9Z"></path>
+                        </svg>
+                      </div>
+                      <p class="text-inherit">${review.likes}</p>
+                    </button>
+                    <button class="flex items-center gap-2">
+                      <div class="text-inherit" data-icon="ThumbsDown" data-size="20px" data-weight="regular">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                          <path d="M239.82,157l-12-96A24,24,0,0,0,204,40H32A16,16,0,0,0,16,56v88a16,16,0,0,0,16,16H75.06l37.78,75.58A8,8,0,0,0,120,240a40,40,0,0,0,40-40V184h56a24,24,0,0,0,23.82-27ZM72,144H32V56H72Zm150,21.29a7.88,7.88,0,0,1-6,2.71H152a8,8,0,0,0-8,8v24a24,24,0,0,1-19.29,23.54L88,150.11V56H204a8,8,0,0,1,7.94,7l12,96A7.87,7.87,0,0,1,222,165.29Z"></path>
+                        </svg>
+                      </div>
+                      <p class="text-inherit">${review.dislikes}</p>
+                    </button>
+                  </div>
+                `;
+              reviewsContainer.appendChild(reviewDiv);
+            });
+          } else {
+            reviewsContainer.innerHTML =
+              '<p class="text-[#a5b6a0]">نظری برای این محصول وجود ندارد.</p>';
+          }
+        } else {
+          // اگر محصولی با این ID پیدا نشد، یک پیام خطا یا محصول پیش‌فرض نمایش داده می‌شود.
+          document.getElementById("productPageTitle").innerText = "NovaTech - محصول یافت نشد";
+          document.getElementById("productCategory").innerText = "خطا";
+          document.getElementById("productTitle").innerText = "محصول یافت نشد";
+          document.getElementById("productSubtitle").innerText =
+            "لطفاً یک ID محصول معتبر وارد کنید.";
+          document.getElementById("productImage").style.backgroundImage = "none";
+          document.getElementById("productDescription").innerText =
+            "متأسفانه محصول مورد نظر شما در حال حاضر موجود نیست یا اطلاعات آن در دسترس نیست.";
+          document.getElementById("productSpecifications").innerText = "هیچ مشخصاتی در دسترس نیست.";
+          document.getElementById("productReviews").innerHTML =
+            '<p class="text-[#a5b6a0]">نظری برای این محصول وجود ندارد.</p>';
+          document.getElementById("productPrice").innerText = "ناموجود";
+        }
+      }
+
+      // وقتی صفحه کاملاً بارگذاری شد، داده‌ها را بارگذاری کن
+      document.addEventListener("DOMContentLoaded", loadProductData);
+    </script>
+  </body>
+</html>
