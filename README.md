@@ -10,7 +10,7 @@ graph TD
     C[JavaScript] -->|Interactivity| B
     D[HTML5] -->|Structure| B
 ```
-tt
+
 ## 🛠 **Technical Specifications**  
 
 ### 🔧 **Core Technologies**  
